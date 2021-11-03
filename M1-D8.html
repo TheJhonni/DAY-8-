@@ -9,6 +9,7 @@
   </head>
   <body>
     <div>
+      <button onclick = "makeItClickable(event)" id="change-button" >Change button</button>
       <h1>This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </div>
@@ -45,7 +46,7 @@
 
     <div>
       <p>And this text is just for the exercise too!</p>
-      <h2 style="color: red">
+      <h2 onclick="changeFooterText(event)" style="color: red">
         Save this page on your computer and open it with VSCode to get the
         questions!
       </h2>
@@ -135,8 +136,18 @@
        Make the heading of the page change color every time the user clicks on it.
       */
 
-      const makeItClickable = function () {
-        //
+      function getRandomColor() {
+            const red = Math.round(Math.random() * 200)
+            const blue = Math.round(Math.random() * 200)
+            const green = Math.round(Math.random() * 200)
+
+            return "rgb(" + red + ", " + green + ", " + blue + ")";
+        }
+
+      const makeItClickable = function (eventData) {
+        const color = getRandomColor();
+        let makeItClickableNode = document.getElementById("change-button")
+        makeItClickableNode.onclick.style.color = color
       };
 
       /* EXERCISE 10
@@ -144,7 +155,8 @@
       */
 
       const changeFooterText = function () {
-        //
+        let changeFooterNode = document.querySelectorAll("h2")
+        changeFooterNode[1].innerText = "Change footer text"
       };
 
       /* EXERCISE 11
