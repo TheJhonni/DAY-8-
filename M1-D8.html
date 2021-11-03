@@ -8,13 +8,13 @@
     </style>
   </head>
   <body>
-  <header>
-    <div>
-      <button onclick = "makeItClickable(event)" id="change-button" >Change button</button>
-      <h1>This is the title of the page</h1>
-      <h2>This is the subtitle of the page</h2>
-    </div>
-  </header>
+    <header>
+      <div>
+        <button onclick = "makeItClickable(event)" id="change-button" >Change button</button>
+        <h1>This is the title of the page</h1>
+        <h2>This is the subtitle of the page</h2>
+      </div>
+    </header>
 
     <div>
       <hr />
@@ -44,15 +44,17 @@
           placeholder="input field for the exercise"
         />
       </div>
-    </div>
-
-    <div>
-      <p>And this text is just for the exercise too!</p>
-      <h2 onclick="changeFooterText(event)" style="color: red">
-        Save this page on your computer and open it with VSCode to get the
-        questions!
-      </h2>
-    </div>
+      <footer>
+        <div>
+          <div>
+            <p>And this text is just for the exercise too!</p>
+            <h2 onclick="changeFooterText(event)" style="color: red">
+              Save this page on your computer and open it with VSCode to get the
+              questions!
+            </h2>
+        </div>
+      </footer> 
+     
     <script>
       /* EXERCISE 1
        Write a function for changing the title of the document in something else.
@@ -78,10 +80,10 @@
        Write a function for changing the text of only the p which are children of a div.
       */
 
-      const changePcontent = function () {
-        let changePcontentNode = document.querySelectorAll("div p")
-        changePcontentNode.innerHTML = "Change text of p (div's children)"
+      const changePcontent = () => {
+        document.querySelector("div > p").innerText = "Change text of p (div's children)"
       };
+      changePcontent();
 
       /* EXERCISE 4
        Write a function for changing the href property of every link to https://www.google.com
@@ -92,7 +94,6 @@
         let changeUrlsNode = document.querySelector("a")
         changeUrlsNode.href = "https://www.google.com"
       };
-
       changeUrls ();
 
       /* EXERCISE 5
@@ -176,8 +177,9 @@
       */
 
       window.onload = function () {
-        //
+        alert ("Welcome!")
       };
+
 
       /* EXERCISE 13
        Use HTML5 tags to properly provide semantic meaning to the different portions of the page.
