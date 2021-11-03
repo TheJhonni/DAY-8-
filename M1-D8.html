@@ -81,9 +81,11 @@
       */
 
       const changePcontent = () => {
-        document.querySelector("div > p").innerText = "Change text of p (div's children)"
+        document.querySelector("div p").innerText = "Change text of p (div's children)"
       };
       changePcontent();
+
+      // querySelectorAll e poi loop!!!
 
       /* EXERCISE 4
        Write a function for changing the href property of every link to https://www.google.com
@@ -112,19 +114,23 @@
       */
 
       const addParagraph = function(content) {
+        
+        let parentNodeP = document.querySelectorAll("div")[0]
         let newParagraphNode = document.createElement("p")
-        let parentNodeP = document.querySelectorAll("div")
-        parentNodeP[0].appendChild(newParagraphNode)
+        newParagraphNode.innerText = content
+        div.appendChild(newParagraphNode)
       };
       addParagraph(content);
 
+      // div.innerHTML += `<p>{content}</p>`  ed è fatto il lavoro!!!
+        
       /* EXERCISE 7
        Write a function for making the first unordered list disappear.
       */
 
       const firstUlDisappear = function() {
         let firstUlDisappearNode = document.getElementById("secondList")
-        firstUlDisappearNode.delete()
+        firstUlDisappearNode.style.desktop = "none"
       };
 
       /* EXERCISE 8
@@ -143,11 +149,11 @@
       */
 
       function getRandomColor() {
-            const red = Math.round(Math.random() * 200)
-            const blue = Math.round(Math.random() * 200)
-            const green = Math.round(Math.random() * 200)
+            const red = Math.round(Math.random() * 255)
+            const green = Math.round(Math.random() * 255)
+            const blue = Math.round(Math.random() * 255)
 
-            return "rgb(" + red + ", " + green + ", " + blue + ")";
+            return red + green + blue;
         }
 
       const makeItClickable = function (eventData) {
@@ -170,7 +176,13 @@
       */
 
       const inputField = document.getElementById("input-field");
-      inputField.onkeyup = console.log()
+      // inputField.addEventListener("keydown", function (event))
+      inputField.onkeydown = function(event) {
+        // console.log(event)
+        // console.log(event.target)
+        console.log(event.target.value)
+
+      }
 
       /* EXERCISE 12
        Create a welcome alert message when the page successfully loads.
