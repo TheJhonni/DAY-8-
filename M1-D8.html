@@ -56,15 +56,18 @@
       */
 
       const changeTitle = function (newTitle) {
-        //
+        let changeTitleNode = document.getElementsByTagName("h1")
+        changeTitleNode[0].innerText = "Title changed" 
       };
+      changeTitle();
 
       /* EXERCISE 2
        Write a function for changing the class of the title of the page in "myHeading".
       */
 
       const addClassToTitle = function () {
-        //
+        let addClassToTitleNode = document.getElementsByClassName("myHeading")
+        addClassToTitleNode.classList.add("newClassTitle")
       };
 
       /* EXERCISE 3
@@ -72,7 +75,8 @@
       */
 
       const changePcontent = function () {
-        //
+        let changePcontentNode = document.querySelectorAll("p > div : nth-child")
+        changePcontentNode[].innerText = "Change text of p (div's children)"
       };
 
       /* EXERCISE 4
@@ -80,15 +84,19 @@
       */
 
       const changeUrls = function () {
-        //
+
+        for (let changeUrlsNode of document.querySelectorAll("url") )
+        changeUrlsNode = "https://www.google.com"
       };
 
       /* EXERCISE 5
        Write a function for adding a new list item in the second unordered list.
       */
 
-      const addToTheSecond = function (content) {
-        //
+          const addToTheSecond = function (content) {
+          let newUlNode = document.createElement("li")
+          let parentNode = document.getElementById("secondList")
+          parentNode.appendChild(newUlNode)
       };
 
       /* EXERCISE 6
@@ -96,7 +104,9 @@
       */
 
       const addParagraph = function (content) {
-        //
+        let newParagraphNode = document.createElement("p")
+        let parentNodeP = document.querySelectorAll("div")
+        parentNodeP[0].appendChild(newParagraphNode)
       };
 
       /* EXERCISE 7
