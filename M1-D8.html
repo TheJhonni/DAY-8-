@@ -86,44 +86,50 @@
       const changeUrls = function () {
 
         for (let changeUrlsNode of document.querySelectorAll("url") )
-        changeUrlsNode = "https://www.google.com"
+        changeUrlsNode.innerHTML = "https://www.google.com"
       };
 
       /* EXERCISE 5
        Write a function for adding a new list item in the second unordered list.
       */
 
-          const addToTheSecond = function (content) {
+          const addToTheSecond = function(content) {
           let newUlNode = document.createElement("li")
           let parentNode = document.getElementById("secondList")
           parentNode.appendChild(newUlNode)
       };
+      addToTheSecond(content);
 
       /* EXERCISE 6
        Write a function for adding a second paragraph to the first div.
       */
 
-      const addParagraph = function (content) {
+      const addParagraph = function(content) {
         let newParagraphNode = document.createElement("p")
         let parentNodeP = document.querySelectorAll("div")
         parentNodeP[0].appendChild(newParagraphNode)
       };
+      addParagraph(content);
 
       /* EXERCISE 7
        Write a function for making the first unordered list disappear.
       */
 
-      const firstUlDisappear = function () {
-        //
+      const firstUlDisappear = function() {
+        let firstUlDisappearNode = document.getElementById("secondList")
+        firstUlDisappearNode.delete()
       };
 
       /* EXERCISE 8
        Write a function for making the background of every unordered list green.
       */
 
-      const paintItGreen = function () {
-        //
+      const paintItGreen = function() {
+        for (let node of document.querySelectorAll("ul")) {
+          node.style.backgroundColor = "green"
+        }
       };
+      paintItGreen();
 
       /* EXERCISE 9
        Make the heading of the page change color every time the user clicks on it.
