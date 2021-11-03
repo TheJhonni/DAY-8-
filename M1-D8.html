@@ -8,11 +8,13 @@
     </style>
   </head>
   <body>
+  <header>
     <div>
       <button onclick = "makeItClickable(event)" id="change-button" >Change button</button>
       <h1>This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </div>
+  </header>
 
     <div>
       <hr />
@@ -57,8 +59,8 @@
       */
 
       const changeTitle = function (newTitle) {
-        let changeTitleNode = document.getElementsByTagName("h1")
-        changeTitleNode[0].innerText = "Title changed" 
+        let changeTitleNode = document.getElementByTagName("h1")
+        changeTitleNode.innerText = "Title changed" 
       };
       changeTitle();
 
@@ -67,17 +69,18 @@
       */
 
       const addClassToTitle = function () {
-        let addClassToTitleNode = document.getElementsByClassName("myHeading")
-        addClassToTitleNode.classList.add("newClassTitle")
+        let addClassToTitleNode = document.querySelector("h1")
+        addClassToTitleNode.classList.add("myHeading")
       };
+      addClassToTitle();
 
       /* EXERCISE 3
        Write a function for changing the text of only the p which are children of a div.
       */
 
       const changePcontent = function () {
-        let changePcontentNode = document.querySelectorAll("p > div : nth-child")
-        changePcontentNode[].innerText = "Change text of p (div's children)"
+        let changePcontentNode = document.querySelectorAll("div p")
+        changePcontentNode.innerHTML = "Change text of p (div's children)"
       };
 
       /* EXERCISE 4
@@ -86,9 +89,11 @@
 
       const changeUrls = function () {
 
-        for (let changeUrlsNode of document.querySelectorAll("url") )
-        changeUrlsNode.innerHTML = "https://www.google.com"
+        let changeUrlsNode = document.querySelector("a")
+        changeUrlsNode.href = "https://www.google.com"
       };
+
+      changeUrls ();
 
       /* EXERCISE 5
        Write a function for adding a new list item in the second unordered list.
@@ -164,7 +169,7 @@
       */
 
       const inputField = document.getElementById("input-field");
-      // ...
+      inputField.onkeyup = console.log()
 
       /* EXERCISE 12
        Create a welcome alert message when the page successfully loads.
